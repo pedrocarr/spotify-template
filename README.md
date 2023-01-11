@@ -47,7 +47,7 @@ Marque esse projeto com uma estrela 🌟
 
 ### Créditos aos áudios usados
 
-#### Transmissão 
+#### Transmissão
 - [English Conversation](https://youtu.be/ytmMipczEI8)
 
 #### Efeitos
@@ -56,9 +56,9 @@ Marque esse projeto com uma estrela 🌟
 - [Boo](https://youtu.be/rYAQN11a2Dc)
 - [Fart](https://youtu.be/4PnUfYhbDDM)
 - [Laugh](https://youtu.be/TZ90IUrMNCo)
-## FAQ 
+## FAQ
 - `NODE_OPTIONS` não é um comando reconhecido pelo sistema, o que fazer?
-    - Se você estiver no Windows, a forma de criar variáveis de ambiente é diferente. Você deve usar a palavra `set` antes do comando. 
+    - Se você estiver no Windows, a forma de criar variáveis de ambiente é diferente. Você deve usar a palavra `set` antes do comando.
     - Ex: `    "test": "set NODE_OPTIONS=--experimental-vm-modules && npx jest --runInBand",`
 
 - Rodei `npm test` mas nada acontece, o que fazer?

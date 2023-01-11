@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node server/index.js",
+    "live-reload": "nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
@@ -21,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/pedrocarr/spotify-template/issues"
   },
-  "homepage": "https://github.com/pedrocarr/spotify-template#readme"
+  "homepage": "https://github.com/pedrocarr/spotify-template#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }

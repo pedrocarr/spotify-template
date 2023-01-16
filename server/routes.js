@@ -6,6 +6,9 @@ const {
   pages: {
     homeHTML,
     controllerHTML
+  },
+  constants: {
+    CONTENT_TYPE
   }
 } = config
 const controller = new Controller()
@@ -53,7 +56,13 @@ async function routes(req, res) {
       stream,
       type
     } = await controller.getFileStream(url)
+    const contentType = CONTENT_TYPE[type]
+    if(contentType) {
+    res.writeHead(200, {
+      'Content-Type': contentType
+    })
 
+  }
     return stream.pipe(res)
   }
 
@@ -61,7 +70,19 @@ async function routes(req, res) {
   return res.end('hello')
 }
 
+function handleError(error, res) {
+  if(error.message.includes('ENOENT')) {
+    logger.warn(`asset not found: ${error.stack}`)
+    res.writeHead(404)
+    return res.end()
+  }
+
+  logger.error(`caught error on API ${error.stack}`)
+  res.writeHead(500)
+  return res.end()
+}
+
 export function handler(req, res) {
   return routes(req, res)
-  .catch(error => logger.error(`Deu ruimmmmm: ${error.stack}`))
+  .catch(error => handleError(error, res))
 }

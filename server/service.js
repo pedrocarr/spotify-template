@@ -1,6 +1,7 @@
 import fs from 'fs';
 import fsPromises from 'fs/promises';
 import config from './config.js';
+import { extname, join } from 'path';
 
 const {
   dir: {

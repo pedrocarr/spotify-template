@@ -11,7 +11,7 @@ describe('#Routes - test site for api response', () => {
       jest.clearAllMocks() // clear all mocks
   })
 
-test.todo('GET / - should redirect to home page')
+test('GET / - should redirect to home page', async () => {})
 test.todo(`GET /home - should response with ${pages.homeHTML} file stream`)
 test.todo(`GET /controller - should response with ${pages.controllerHTML} file stream`)
 test.todo('GET /file.ext - should response with file stream')
